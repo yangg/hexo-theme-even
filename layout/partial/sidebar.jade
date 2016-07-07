@@ -24,7 +24,7 @@ if display != "remove"
           each link, name in theme.social
             li.link-item
               a(href="#{link}")
-                div(class="iconfont icon-#{name}")  
+                i(class="iconfont icon-#{name}")  
                 != name
     if !is_post() && theme.friends
       .friends
@@ -32,6 +32,6 @@ if display != "remove"
         ul.links
           each link, name in theme.friends
             li.link-item
-              i(class="fa fa-link")
+              i(class="iconfont icon-link")
               a(href="#{link}")
                 != name

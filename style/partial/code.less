@@ -30,12 +30,13 @@ code, pre {
     }
 
     .code pre {
-        padding: 30px 14px 14px;
+        padding: 14px 14px;
         line-height: 1.5em;
         background-color: rgba(0,0,0,0);
         margin: 0;
     }
 
+    /*
     &::after {
         position: absolute;
         top: 0;
@@ -47,6 +48,26 @@ code, pre {
         color: #c2c0bc;
         background-color: #f1ede4;
         content: "Code";
+    }
+    */
+    &-show-language {
+        position: relative;
+        margin-top: 1em;
+        + figure.highlight {
+            margin-top: 0;
+        }
+    }
+    &-show-language-label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 .5em;
+        font-size: 12px;
+        color: #000;
+        background-color: #CFCFCF;
+        border-radius: 0 0 0 5px;
+        z-index: 1;
+        color: black;
     }
 }
 

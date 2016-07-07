@@ -4,14 +4,14 @@ mixin home_paginator()
     .paginator
         if page.prev
             a.prev(href=url_for(prev)) 
-                    i.fa.fa-chevron-left
+                    i.iconfont.icon-angle-left
                     span 
                         != __('prev')
         if page.next
             a.next(href=url_for(next)) 
                     span
                         != __('next')
-                    i.fa.fa-chevron-right
+                    i.iconfont.icon-angle-right
 
 mixin post_paginator()
     - var prev = page.prev ? page.prev.path : false;
@@ -19,11 +19,11 @@ mixin post_paginator()
     .paginator
         if prev
             a.prev(href=url_for(prev))
-                i.fa.fa-chevron-left
+                i.iconfont.icon-angle-left
                 span 
                     != __('prev')
         if next
             a.next(href=url_for(next))
                 span
                     != __('next')
-                i.fa.fa-chevron-right
+                i.iconfont.icon-angle-right
