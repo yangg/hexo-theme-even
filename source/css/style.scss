@@ -4,6 +4,8 @@
  * https://github.com/ahonn/hexo-theme-even
  */
 
+$global-font-family: Avenir, Helvetica Neue, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+
 // Normalize.css
 @import 'normalize';
 
@@ -46,3 +48,5 @@
 @include even-categories;
 
 @include even-media;
+
+@import 'custom';

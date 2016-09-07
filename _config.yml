@@ -1,0 +1,41 @@
+# navbar
+menu:
+  Home: /
+  Archives: /archives/
+  # Categories: /categories/
+  Tags: /tags/
+  About: /about/
+
+# site icon
+favicon: /favicon.ico
+
+# theme color
+# Default | Mint Green | Marine Blue | Hot Pink
+theme_color: Mint Green
+
+# comments
+comments:
+  post: true
+  about: true
+
+# article directory sidebar
+sidebar: true
+
+# Analytics
+## Baidu Analytics
+baidu_analytics:
+## Google Analytics
+google_analytics: UA-78709503-1
+
+# Comments
+## Duoshuo
+# duoshuo_shortname: ahonn
+## Disqus
+disqus_shortname: uedsky
+
+# Social links
+social:
+  email: uedsky@gmail.com
+  github: https://github.com/yangg
+  codepen: http://codepen.io/yangg
+  rss: /atom.xml
