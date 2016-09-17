@@ -6,6 +6,8 @@ block title
 link(rel="canonical", href=url_for(url.replace(/index\.html/,'')))
 //- RSS
 != feed_tag('atom.xml')
+//- icons
+link(rel="apple-touch-icon", href=url_for('apple-touch-icon.png'))
 
 //- theme style
 link(rel="stylesheet", href=url_for("css/style.css"))
