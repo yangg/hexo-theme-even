@@ -2,15 +2,14 @@ include meta
 
 block title
 
-link(rel="icon", href=url_for(theme.favicon))
-
+//- 默认请求 "/favicon.ico"，放到博客目录 /source/ 下
+//- add apple touch icon
+link(rel="apple-touch-icon", href=url_for('apple-touch-icon.png'))
 //- canonical url https://support.google.com/webmasters/answer/139066
 link(rel="canonical", href=url_for(url.replace(/index\.html/,'')))
 //- RSS
 != feed_tag('atom.xml')
 
-//- iconfont
-link(rel="stylesheet", href=url_for("fonts/iconfont/iconfont.css"))
 //- theme style
 link(rel="stylesheet", href=url_for("css/style.css"))
 

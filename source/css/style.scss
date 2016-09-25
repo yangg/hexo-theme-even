@@ -4,6 +4,10 @@
  * https://github.com/ahonn/hexo-theme-even
  */
 
+$global-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Cantarell, Fira Sans, Helvetica Neue, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+$body-container-margin: 32px 15px;
+$header-padding: 20px 15px;
+
 // Normalize.css
 @import 'normalize';
 
@@ -46,3 +50,5 @@
 @include even-categories;
 
 @include even-media;
+
+@import 'custom';
