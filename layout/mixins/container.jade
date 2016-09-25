@@ -18,6 +18,10 @@ mixin home()
           else
             div.post-content
               != item.content
+            if item.link
+              a.read-more(href=url_for(item.link) target="_blank") 阅读原文
+              - var tag = item.tags.toArray().slice(-1)[0]
+              a.read-more(href=url_for(tag.path) style="margin-left: 5px;")= '#' + tag.name
 
     - })
 
@@ -35,6 +39,11 @@ mixin post()
         != toc(page.content, {list_number: false})
     .post-content
       != page.content
+      if page.link
+        blockquote
+          | 这是一篇链接分享，请访问原文：<br/>
+          a(href=page.link target="_blank")
+            = page.title
 
 //- Archive
 mixin archive()
