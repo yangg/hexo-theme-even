@@ -1,9 +1,7 @@
 doctype
 html(lang=config.language)
   head
-    meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
-    meta(name="X-UA-Compatible", content="IE=edge")
+    include partial/meta
     link(rel="stylesheet", href=url_for("demo/src/css/demo.css"))
     title
       != page.title
