@@ -10,7 +10,7 @@ ul.nav
         a.active(href=link)
           != __(name)
           
-      else if is_archive() && name == "Archives"
+      else if is_archive() && name == "Archives" && !page.demo && !page.note
         a.active(href=link target="_self")
           != __(name)
 
@@ -29,3 +29,8 @@ ul.nav
       else
         a(href=link target="_self")
           != __(name)
+  - var isShow = page.demo || page.note || (page.layout === 'post' && !page.published) || is_archive() || (is_tag() || page.layout == "tags")
+  li.nav-link(style=isShow ? '': 'display: none')
+    a(href=url_for('note') class= (page.note || page.layout === 'post' && !page.published) ? 'active': '') 笔记
+  li.nav-link(style=isShow ? '': 'display: none')
+    a(href=url_for('demo') class= page.demo ? 'active': '') 示例
