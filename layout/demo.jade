@@ -1,0 +1,31 @@
+doctype
+html(lang=config.language)
+  head
+    include partial/meta
+    link(rel="stylesheet", href=url_for("demo/src/css/demo.css"))
+    title
+      != page.title
+  body
+    #page
+      h2.page-header
+        != page.title
+      .page-back
+        - var backUrl = page.back ? site.posts.findOne({slug: page.back}).path : '/'
+        - var backText = backUrl == '/' ? 'Home' : 'Post'
+        a(href=url_for(backUrl))
+          != 'Back to ' + backText
+      != page.content
+
+    footer#footer
+      - var currentDate = new Date()
+      - var year = currentDate.getFullYear()
+      - var since = config.since
+      if since
+        - year = year == since ? year : since + '-' + year
+      - copyright = '&copy;' + year
+      != copyright + '&nbsp;' + config.author
+
+    include mixins/analytics
+    if theme.google_analytics && !env.debug
+      // google analytics
+      +google_analytics()
