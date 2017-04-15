@@ -1,0 +1,23 @@
+doctype
+html(lang=config.language)
+  head
+    include partial/meta
+    style.
+      .fe-loader,.fe-loader::before,.fe-loader::after{width:12px;height:12px;border-radius:50%;-webkit-animation:loader10m 2s ease-in-out infinite;animation:loader10m 2s ease-in-out infinite}.fe-loader{position:fixed;top:37.2%;left:50%;-webkit-transform:translate(-37.2%,-50%);transform:translate(-37.2%,-50%)}.fe-loader:before{content:"";position:absolute;top:0;left:-25px;-webkit-animation-name:loader10g;animation-name:loader10g}.fe-loader:after{content:"";position:absolute;top:0;left:25px;-webkit-animation-name:loader10d;animation-name:loader10d}@-webkit-keyframes loader10g{0%{background-color:#3CBA54}25%{background-color:#4885ed}50%{background-color:#3CBA54}75%{background-color:#3CBA54}100%{background-color:#3CBA54}}@keyframes loader10g{0%{background-color:#3CBA54}25%{background-color:#4885ed}50%{background-color:#3CBA54}75%{background-color:#3CBA54}100%{background-color:#3CBA54}}@-webkit-keyframes loader10m{0%{background-color:#3CBA54}25%{background-color:#3CBA54}50%{background-color:#4885ed}75%{background-color:#3CBA54}100%{background-color:#3CBA54}}@keyframes loader10m{0%{background-color:#3CBA54}25%{background-color:#3CBA54}50%{background-color:#4885ed}75%{background-color:#3CBA54}100%{background-color:#3CBA54}}@-webkit-keyframes loader10d{0%{background-color:#3CBA54}25%{background-color:#3CBA54}50%{background-color:#3CBA54}75%{background-color:#4885ed}100%{background-color:#3CBA54}}@keyframes loader10d{0%{background-color:#3CBA54}25%{background-color:#3CBA54}50%{background-color:#3CBA54}75%{background-color:#4885ed}100%{background-color:#3CBA54}}
+    title
+      != page.title
+  body
+    .fe-loader
+    textarea(id="source", hidden)
+      != page.content
+
+    link(rel="stylesheet", href=url_for("src/css/remark.css"))
+    script(src=url_for("src/vendor/remark.min.js"))
+    script.
+      remark.create()
+      document.querySelector('.fe-loader').style.display = 'none'
+
+    include mixins/analytics
+    if theme.google_analytics && !env.debug
+      // google analytics
+      +google_analytics()
